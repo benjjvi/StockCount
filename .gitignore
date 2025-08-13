@@ -209,3 +209,6 @@ __marimo__/
 
 # Mac
 .DS_Store
+
+# Software Specific
+pdf_cache/*.pdf

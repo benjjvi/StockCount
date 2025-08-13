@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Spirit Cupboard Run Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        img {
+            vertical-align: middle;
+        }
+        .count-text {
+            font-size: 14px;
+            color: #555;
+        }
+        .pdf-button {
+            display: inline-block;
+            padding: 8px 14px;
+            margin-bottom: 15px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .pdf-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+{% if pdf_url %}
+    <a href="{{ pdf_url }}" target="_blank" class="pdf-button">📄 View as PDF</a>
+{% endif %}
+
+<h1>Spirit Cupboard Run Results</h1>
+
+{% for (section, pair_label), spirits in pair_results.items() %}
+    <h2>{{ section }} — {{ pair_label }}</h2>
+    <ul>
+        {% for spirit, counts in spirits.items() %}
+            {% if counts.boxes > 0 or counts.bottles > 0 %}
+                <li>
+                    <strong>{{ spirit }}:</strong>
+                    {% for i in range(counts.boxes) %}
+                        <img src="{{ url_for('static', filename='img/box.png') }}" style="height:40px;">
+                    {% endfor %}
+                    {% for i in range(counts.bottles) %}
+                        <img src="{{ url_for('static', filename='img/btl.png') }}" style="height:40px;">
+                    {% endfor %}
+                    <span class="count-text">
+                        (
+                        {% if counts.boxes > 0 %}
+                            {{ counts.boxes }} box{% if counts.boxes != 1 %}es{% endif %}
+                        {% endif %}
+                        {% if counts.boxes > 0 and counts.bottles > 0 %}
+                            , 
+                        {% endif %}
+                        {% if counts.bottles > 0 %}
+                            {{ counts.bottles }} bottle{% if counts.bottles != 1 %}s{% endif %}
+                        {% endif %}
+                        )
+                    </span>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endfor %}
+
+</body>
+</html>

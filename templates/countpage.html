@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count Spirits</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
+        h1 { text-align: center; }
+        h2 { background-color: #eee; padding: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; }
+        th { background-color: #ddd; }
+        input[type=number] {
+            width: 80px;
+            padding: 5px;
+            font-size: 16px;
+        }
+        input[type=submit] {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            background: #28a745;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+        input[type=submit]:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ section_name }}</h1>
+    <form method="POST" action="/process">
+        {% if items is mapping %}
+            {% for backbar, spirits in items.items() %}
+                <h2>{{ backbar }}</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Spirit</th>
+                            <th>Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for spirit in spirits %}
+                        <tr>
+                            <td>{{ spirit }}</td>
+                            <td><input type="number" name="{{ section_name }}__{{ backbar }}__{{ spirit }}" inputmode="numeric" pattern="[0-9]*" required></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endfor %}
+        {% elif items is iterable %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Spirit</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for spirit in items %}
+                    <tr>
+                        <td>{{ spirit }}</td>
+                        <td><input type="number" name="{{ section_name }}__{{ spirit }}" inputmode="numeric" pattern="[0-9]*" required></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

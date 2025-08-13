@@ -1,0 +1,12 @@
+{
+  "Bottom Bar": {
+    "Backbar 1": ["Tequila Rose", "JC Tequila", "Kahlua", "Strika", "Baileys", "AU Pink", "AU Blue", "AU Peach", "AU Strawberry", "AU Pineapple", "Smirnoff", "Smirnoff Raspberry", "Smirnoff Mango and Passionfruit", "Captain Morgans White", "Captain Morgans Tiki", "Captain Morgans Spiced", "Archers", "Malibu", "Gordon's", "Gordon's Premium Pink", "Beefeater Blood Orange", "Corky's Blueberry", "Corky's Apple", "Corky's Mango", "Corky's Cherry", "Corky's Raspberry"],
+    "Backbar 2": ["Jack Daniels", "Disaronno", "Captain Morgans Tiki", "Captain Morgans Spiced", "Captain Morgans White", "AU Pink", "AU Blue", "AU Peach", "AU Strawberry", "AU Pineapple", "XIX", "Smirnoff Mango and Passionfruit", "Smirnoff Raspberry", "Smirnoff Red", "Malibu", "Archers", "Gordon's", "Gordon's Premium Pink", "Beefeater Blood Orange", "Absolut Vanilla"],
+    "Backbar 3": ["Jack Daniels", "Disaronno", "Captain Morgans Tiki", "Captain Morgans Spiced", "Captain Morgans White", "AU Pink", "AU Blue", "AU Peach", "AU Strawberry", "AU Pineapple", "XIX", "Smirnoff Mango and Passionfruit", "Smirnoff Raspberry", "Smirnoff Red", "Malibu", "Archers", "Gordon's", "Gordon's Premium Pink", "Beefeater Blood Orange", "Absolut Vanilla"],
+    "Backbar 4A": ["Tequila Rose", "JC Tequila", "Cointreau", "Kahlua", "Strika", "Baileys", "Corky's Blueberry", "Corky's Apple", "Corky's Mango", "Corky's Cherry", "Corky's Raspberry"]
+  },
+  "Top Bar": {
+    "Backbar 5": ["Jack Daniels", "Disaronno", "Captain Morgans Tiki", "Captain Morgans Spiced", "Captain Morgans White", "AU Pink", "AU Blue", "AU Peach", "AU Strawberry", "AU Pineapple", "XIX", "Smirnoff Mango and Passionfruit", "Smirnoff Raspberry", "Smirnoff Red", "Malibu", "Archers", "Gordon's", "Gordon's Premium Pink", "Beefeater Blood Orange", "Absolut Vanilla"],
+    "Backbar 6A": ["Tequila Rose", "JC Tequila", "Cointreau", "Kahlua", "Strika", "Baileys", "Corky's Blueberry", "Corky's Apple", "Corky's Mango", "Corky's Cherry", "Corky's Raspberry"]
+  }
+}
