@@ -10,7 +10,7 @@ PDF_LIFETIME = 6 * 60 * 60  # 6 hours in seconds
 
 def cleanup_old_pdfs():
     folder = "pdf_cache"
-    os.makedirs(folder, exist_ok=True)  # ✅ Make sure it exists
+    os.makedirs(folder, exist_ok=True)
     now = datetime.datetime.now()
     cutoff = now - datetime.timedelta(hours=6)
 
@@ -63,7 +63,7 @@ def get_par(section: str, backbar_label: str, spirit: str) -> int:
     if section == "Top Bar":
         if n == 5:
             if spirit in ("Captain Morgans Spiced", "Smirnoff Red"):
-                return 10
+                return 5 # used to be 10, but not anymore
             if is_au(spirit) or spirit in ("Smirnoff Raspberry", "Smirnoff Mango and Passionfruit", "Archers", "Malibu"):
                 return 5
             return 3
